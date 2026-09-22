@@ -1,46 +1,211 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #000000, #001f3f, #003d7a);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueStore - Premium Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-.container {
-  text-align: center;
-  background: rgba(10, 10, 10, 0.95);
-  padding: 50px;
-  border-radius: 25px;
-  border: 2px solid #008cff;
-  box-shadow: 0 0 30px rgba(0, 140, 255, 0.4);
-  width: 350px;
-}
+<body>
 
-h1 {
-  color: #00aaff;
-  font-size: 36px;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px rgba(0, 170, 255, 0.7);
-}
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Blue<span>Store</span></div>
 
-button {
-  padding: 14px 30px;
-  border: none;
-  border-radius: 30px;
-  background: linear-gradient(90deg, #0066ff, #00bfff);
-  color: #ffffff;
-  font-size: 17px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-button:hover {
-  transform: scale(1.08);
-  background: linear-gradient(90deg, #00bfff, #0066ff);
-  box-shadow: 0 0 20px rgba(0, 191, 255, 0.8);
-}
+      <div class="cart">
+        🛒 Cart <span id="cart-count">0</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="small-title">WELCOME TO BLUESTORE</p>
+      <h1>Discover Products<br><span>Made For You</span></h1>
+      <p>
+        Explore our collection of premium products designed
+        to make your everyday life better.
+      </p>
+
+      <a href="#products" class="hero-btn">Shop Now</a>
+    </div>
+
+    <div class="hero-image">
+      <div class="circle"></div>
+      <div class="product-icon">🎧</div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products-section" id="products">
+
+    <div class="section-title">
+      <p>OUR COLLECTION</p>
+      <h2>Featured Products</h2>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="controls">
+      <input
+        type="text"
+        id="search"
+        placeholder="Search products..."
+      >
+
+      <select id="category">
+        <option value="all">All Categories</option>
+        <option value="electronics">Electronics</option>
+        <option value="fashion">Fashion</option>
+        <option value="accessories">Accessories</option>
+      </select>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="product-list">
+
+      <div class="product-card" data-category="electronics" data-name="Wireless Headphones">
+        <div class="product-image blue-bg">🎧</div>
+        <div class="product-info">
+          <span>Electronics</span>
+          <h3>Wireless Headphones</h3>
+          <p>Premium sound with noise cancellation.</p>
+
+          <div class="product-bottom">
+            <strong>$79.99</strong>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="electronics" data-name="Smart Watch">
+        <div class="product-image purple-bg">⌚</div>
+        <div class="product-info">
+          <span>Electronics</span>
+          <h3>Smart Watch</h3>
+          <p>Track your fitness and stay connected.</p>
+
+          <div class="product-bottom">
+            <strong>$129.99</strong>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="fashion" data-name="Premium Sneakers">
+        <div class="product-image dark-bg">👟</div>
+        <div class="product-info">
+          <span>Fashion</span>
+          <h3>Premium Sneakers</h3>
+          <p>Comfortable sneakers for everyday use.</p>
+
+          <div class="product-bottom">
+            <strong>$89.99</strong>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="accessories" data-name="Classic Backpack">
+        <div class="product-image cyan-bg">🎒</div>
+        <div class="product-info">
+          <span>Accessories</span>
+          <h3>Classic Backpack</h3>
+          <p>Stylish and spacious backpack for daily use.</p>
+
+          <div class="product-bottom">
+            <strong>$49.99</strong>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="electronics" data-name="Bluetooth Speaker">
+        <div class="product-image blue-bg">🔊</div>
+        <div class="product-info">
+          <span>Electronics</span>
+          <h3>Bluetooth Speaker</h3>
+          <p>Powerful sound in a compact design.</p>
+
+          <div class="product-bottom">
+            <strong>$59.99</strong>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="fashion" data-name="Classic Hoodie">
+        <div class="product-image purple-bg">👕</div>
+        <div class="product-info">
+          <span>Fashion</span>
+          <h3>Classic Hoodie</h3>
+          <p>Soft, comfortable and perfect for any season.</p>
+
+          <div class="product-bottom">
+            <strong>$39.99</strong>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div>
+      <p class="small-title">WHY BLUESTORE?</p>
+      <h2>Quality Products.<br>Simple Shopping.</h2>
+      <p>
+        We believe shopping should be simple, fast and enjoyable.
+        That's why we carefully select products that combine
+        quality, style and value.
+      </p>
+    </div>
+
+    <div class="features">
+      <div>
+        <h3>🚚</h3>
+        <h4>Fast Delivery</h4>
+        <p>Quick and reliable shipping.</p>
+      </div>
+
+      <div>
+        <h3>🔒</h3>
+        <h4>Secure Payment</h4>
+        <p>Your payment information is protected.</p>
+      </div>
+
+      <div>
+        <h3>⭐</h3>
+        <h4>Quality Products</h4>
+        <p>Products selected with care.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <p class="small-title">GET IN TOUCH</p>
+    <h2>Have Questions?</h2>
+    <p>Email us at <strong>support@bluestore.com</strong></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="logo">Blue<span>Store</span></div>
+    <p>© 2026 BlueStore. All rights reserved.</p>
+  </footer>
+
+  <script src="js.js"></script>
+</body>
+</html>
